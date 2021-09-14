@@ -1,6 +1,5 @@
 const bookForm = document.forms['book-form'];
 const bookContentContainer = document.getElementById('book-content-container');
-const removeBookButton = document.getElementById('remove-book');
 const bookTitle = document.getElementById('title');
 const bookDescription = document.getElementById('description');
 
@@ -9,7 +8,7 @@ function Book(title, description) {
   this.description = description;
 }
 
-let booksArray = JSON.parse(localStorage.getItem('Books') || '[]');
+const booksArray = JSON.parse(localStorage.getItem('Books') || '[]');
 let newBookDiv = '';
 
 const showAllBooks = () => {
@@ -36,7 +35,7 @@ function addBookToList(newBook) {
   bookContentContainer.innerHTML = newBookDiv;
   booksArray.push(newBook);// push the book to the array
   localStorage.setItem('Books', JSON.stringify(booksArray));// set the new book to the local storage
-  location.reload();// relaod the window
+  window.location.reload();// relaod the window
 }
 
 bookForm.addEventListener('submit', (event) => {
@@ -47,8 +46,8 @@ bookForm.addEventListener('submit', (event) => {
 
 document.querySelectorAll('.remove-book').forEach((item, bookIndex) => {
   item.addEventListener('click', () => {
-    let newBooksArray = booksArray.filter((book, index) => bookIndex !== index);
+    const newBooksArray = booksArray.filter((book, index) => bookIndex !== index);
     localStorage.setItem('Books', JSON.stringify(newBooksArray));// set the new book to the local storage
-    location.reload();// reload the page
-  });  
+    window.location.reload();// reload the page
+  });
 });
