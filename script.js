@@ -1,9 +1,10 @@
-class Book {
-  constructor(title, description) {
-    this.title = title;
-    this.description = description;
-  }
-}
+// class Book {
+//   constructor(title, description) {
+//     this.title = title;
+//     this.description = description;
+//   }
+// 
+
 class BookStore {
   constructor() {
     this.newBookDiv = '';
@@ -17,7 +18,10 @@ class BookStore {
   isFormSubmit = () => {
     this.bookForm.addEventListener('submit', (event) => {
       event.preventDefault();
-      const book = new Book(this.bookTitle.value, this.bookDescription.value);
+      const book = {
+        title: this.bookTitle.value,
+        description: this.bookDescription.value
+      };
       this.addBookToList(book);
     });
   }
