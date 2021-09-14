@@ -2,33 +2,30 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible"
-          content="IE=edge">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-    <title>Awesome Books</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awesome Books</title>
 
 </head>
 
 <body>
-    <form id="book-form">
-        <input id="title"
-               type="text"
-               name="title">
-        <input id="description"
-               type="text"
-               name="description">
-        <button type="submit">Add Book</button>
-    </form>
-    <table id="book-table">
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-        </tr>
-    </table>
+  <div id="books-container">
+    <h1>Awesome books</h1>
+    <div id="book-content-container"></div> 
+  </div>
+  <br>
+  <br>
+  <form id="book-form">
+    <input id="title" type="text" name="title">
+    <br>
+    <br>
+    <input id="description" type="text" name="description">
+    <br>
+    <br>
+    <button type="submit">Add Book</button>
+  </form>
 
-    <script src="./script.js"></script>
+  <script src="./script.js"></script>
 </body>
-
 </html>

@@ -1,34 +1,31 @@
 const bookForm = document.forms['book-form'];
-const bookTable = document.querySelector('#book-table');
+const bookContentContainer = document.getElementById('book-content-container');
+const removeBookButton = document.getElementById('remove-book');
+const bookTitle = document.getElementById('title');
+const bookDescription = document.getElementById('description');
 
 function Book(title, description) {
-    this.title = title;
-    this.description = description;
+  this.title = title;
+  this.description = description;
 }
 
-function addBookToList(book) {
-    const tr = document.createElement('tr');
-    const title = document.createElement('td');
-    const description = document.createElement('td');
-    const deleteButton = document.createElement('button');
-  
-    td1.textContent = book.title;
-    td2.textContent = book.description;
-  
-    deleteButton.textContent = 'Delete';
-    
-    tr.appendChild(title);
-    tr.appendChild(description);
-    tr.appendChild(deleteButton);
-    bookTable.appendChild(tr);
+let booksArray = [];
+let newBookDiv  =  '';
+
+function addBookToList(newBook) {
+  // append the new book
+  newBookDiv += `<p>${newBook.title}</p>;
+    <p>${newBook.description}</p>;
+    <button class="remove-book">Remove</button>;
+    </hr>;`;
+  bookContentContainer.innerHTML = newBookDiv;
+  booksArray.push(newBook); // push the book to the array
+  localStorage.setItem("Books", JSON.stringify(booksArray)); // set the new book to the local storage
+  location.reload(); // relaod the window
 }
 
-bookForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const inputIds = ['#title', '#description'];
-    const inputs = [];
-    inputIds.forEach(inputId => inputs.push(bookForm.querySelector(inputId)));
-    const [title, description] = inputs;
-    const book = new Book(title.value, description.value);
-    addBookToList(book);
-  });
+bookForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const book = new Book(bookTitle.value, bookDescription.value);
+  addBookToList(book);
+});
