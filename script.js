@@ -34,9 +34,9 @@ function addBookToList(newBook) {
     <button class='remove-book'>Remove</button>
     <hr>`;
   bookContentContainer.innerHTML = newBookDiv;
-  booksArray.push(newBook); // push the book to the array
-  localStorage.setItem('Books', JSON.stringify(booksArray)); // set the new book to the local storage
-  location.reload(); // relaod the window
+  booksArray.push(newBook);// push the book to the array
+  localStorage.setItem('Books', JSON.stringify(booksArray));// set the new book to the local storage
+  location.reload();// relaod the window
 }
 
 bookForm.addEventListener('submit', (event) => {
@@ -45,10 +45,10 @@ bookForm.addEventListener('submit', (event) => {
   addBookToList(book);
 });
 
-document.querySelectorAll('.remove-book').forEach((item,  bookIndex)  =>  {
-  item.addEventListener('click',  ()  =>  {
-    let newBooksArray  =  booksArray.filter((book,  index)  =>  bookIndex  !==  index);
-    localStorage.setItem('Books',  JSON.stringify(newBooksArray));  // set the new book to the local storage
-    location.reload();  // reload the page
+document.querySelectorAll('.remove-book').forEach((item, bookIndex) => {
+  item.addEventListener('click', () => {
+    let newBooksArray = booksArray.filter((book, index) => bookIndex !== index);
+    localStorage.setItem('Books', JSON.stringify(newBooksArray));// set the new book to the local storage
+    location.reload();// reload the page
   });  
 });
