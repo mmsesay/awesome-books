@@ -1,6 +1,8 @@
-function Book(title, description) {
-  this.title = title;
-  this.description = description;
+class Book {
+  constructor(title, description) {
+    this.title = title;
+    this.description = description;
+  }
 }
 class BookStore {
   constructor() {
@@ -59,3 +61,4 @@ class BookStore {
 const bookStore = new BookStore();
 bookStore.isFormSubmit();
 bookStore.showAllBooks();
+bookStore.removeBookFromList();
