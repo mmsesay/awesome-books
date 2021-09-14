@@ -1,9 +1,8 @@
-// class Book {
-//   constructor(title, description) {
-//     this.title = title;
-//     this.description = description;
-//   }
-// 
+function Book (title, description) {
+    this.title = title;
+    this.description = description;
+  }
+
 
 class BookStore {
   constructor() {
