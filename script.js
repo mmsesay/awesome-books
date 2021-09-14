@@ -1,4 +1,3 @@
-
 function Book(title, description) {
   this.title = title;
   this.description = description;
@@ -57,6 +56,6 @@ class BookStore {
   }
 }
 
-let bookStore = new BookStore();
+const bookStore = new BookStore();
 bookStore.isFormSubmit();
 bookStore.showAllBooks();
