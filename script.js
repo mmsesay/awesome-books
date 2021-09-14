@@ -15,7 +15,7 @@ class BookStore {
         title: this.bookTitle.value,
         description: this.bookDescription.value,
       };
-      
+
       this.addBookToList(book);
     });
   }
