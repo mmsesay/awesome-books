@@ -1,9 +1,3 @@
-function Book (title, description) {
-    this.title = title;
-    this.description = description;
-  }
-
-
 class BookStore {
   constructor() {
     this.newBookDiv = '';
@@ -19,8 +13,9 @@ class BookStore {
       event.preventDefault();
       const book = {
         title: this.bookTitle.value,
-        description: this.bookDescription.value
+        description: this.bookDescription.value,
       };
+      
       this.addBookToList(book);
     });
   }
