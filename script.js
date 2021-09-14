@@ -44,3 +44,11 @@ bookForm.addEventListener('submit', (event) => {
   const book = new Book(bookTitle.value, bookDescription.value);
   addBookToList(book);
 });
+
+document.querySelectorAll('.remove-book').forEach((item,  bookIndex)  =>  {
+  item.addEventListener('click',  ()  =>  {
+    let newBooksArray  =  booksArray.filter((book,  index)  =>  bookIndex  !==  index);
+    localStorage.setItem('Books',  JSON.stringify(newBooksArray));  // set the new book to the local storage
+    location.reload();  // reload the page
+  });  
+});
