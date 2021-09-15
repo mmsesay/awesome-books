@@ -2,9 +2,9 @@
 
 > This project is on HTML + JAVASCRIPT. One can create a book, save it to the browsers local storage and can remove a specific book from the array and update the local storage.
 
-Awesome Page                                      |
-:------------------------------------------------:|
-![](./images/awesome-books.png)                   |
+Awesome Books version 1                           | Awesome Books version 2                          |
+:------------------------------------------------:|:------------------------------------------------:|
+![](./images/awesome-books-v1.png)                   |![](./images/awesome-books-v2.png)                   |
 
 ## Built With
 
@@ -30,6 +30,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 - microverseinc for the readme template
+- grmarc at [freepik](http://www.freepik.com) for the book design
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
