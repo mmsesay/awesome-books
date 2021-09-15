@@ -21,10 +21,10 @@ class BookStore {
   }
 
   bookDetails = (book) => {
-    this.newBookDiv += `<p>${book.title}</p>
-      <p>${book.description}</p>
-      <button class='remove-book'>Remove</button>
-      <hr>`;
+    this.newBookDiv += `<tr class='flex items-center justify-between h-10 px-2 my-3 font-glory'>
+      <td class='text-gray-600 font-bold font-roboto'>'${book.title}' by ${book.description}</td>
+      <td class='text-gray-600 font-bold'><button class='remove-book bg-blue-500 text-white p-1 rounded shadow-md hover:shadow-none hover:bg-transparent hover:border-blue-500'>Remove</button></td>
+      </tr>`;
   }
 
   addBookToList = (newBook) => {

@@ -4,24 +4,37 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Crete+Round&family=Glory&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
   <title>Awesome Books</title>
 </head>
 <body>
-  <div id="books-container">
-    <h1>Awesome books</h1>
-    <div id="book-content-container"></div> 
-  </div>
-  <br>
-  <br>
-  <form id="book-form">
-    <input id="title" type="text" name="title" placeholder="Enter book title">
-    <br>
-    <br>
-    <input id="description" type="text" name="description" placeholder="Enter book description">
-    <br>
-    <br>
-    <button type="submit">Add Book</button>
-  </form>
+  <main class="flex flex-col space-between">
+    <div id="books-container" class="px-3 py-10 h-auto">
+      <h1 class="text-center font-bold text-white text-lg font-crete">All awesome books</h1>
+      <table id="book-content-container" class="mt-5 border-2 border-gray-300 border-black flex flex-col bg-white">
+      </table>
+    </div>
+    <div class="form-container">
+      <div class="flex justify-center my-3">
+        <div class="border-2 w-32 rounded border-gray-300"></div>
+      </div>
+      <form id="book-form" class="p-3 flex flex-col h-full px-12 -mt-30">
+        <h2 class="text-center font-bold text-white mb-4 text-lg font-crete">Add a new book</h2>
+        <input id="title" type="text" name="title" placeholder="Title" class="my-2 p-2 border border-gray-400 text-gray-500 font-roboto">
+        <input id="description" type="text" name="description" placeholder="Author" class="my-2 p-2 border border-gray-400 text-gray-500 font-roboto">
+        <div class="flex justify-end w-full my-2">
+          <button type="submit" class="bg-blue-500 text-white p-1 rounded shadow-md hover:shadow-none hover:bg-transparent hover:border-blue-500 w-14 font-glory">Add</button>
+        </div>
+      </form>
+    </div>
+    <div class="book-design-container">
+      <img id="book-illustration" src="./images/book-design.svg" alt="book illustration">
+    </div>
+  </main>
   <script src="./script.js"></script>
 </body>
 </html>
