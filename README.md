@@ -4,7 +4,7 @@
 
 Awesome Books version 1                           | Awesome Books version 2                          |
 :------------------------------------------------:|:------------------------------------------------:|
-![](./images/awesome-books-v1.png)                   |![](./images/awesome-books-v2.png)                   |
+![](./images/awesome-books-v1.png)                |![](./images/awesome-books-v2.png)                |
 
 ## Built With
 
