@@ -6,7 +6,6 @@ body {
   position: relative;
   background-image: url('./images/background.svg');
   background-repeat: no-repeat;
-  background-position: cover;
   background-size: cover;
   z-index: -1;
 }
