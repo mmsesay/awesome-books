@@ -13,7 +13,7 @@ class BookStore {
     this.liList = document.getElementById('li-list');
     this.liAdd = document.getElementById('li-add');
     this.liContact = document.getElementById('li-contact');
-    this.today = new Date;
+    this.today = new Date();
   }
 
   isFormSubmit = () => {
@@ -66,7 +66,7 @@ class BookStore {
   }
 
   getCurrentDateTime = () => {
-    const month = this.today.toLocaleString('en-us', {month: 'long'});
+    const month = this.today.toLocaleString('en-us', { month: 'long' });
     const date = this.today.getDate();
     const year = this.today.getFullYear();
     const hour = this.today.getHours();
@@ -76,10 +76,17 @@ class BookStore {
     let formattedDate;
 
     switch (date) {
-      case 1: formattedDate = `${date}st`;
-      case 2: formattedDate = `${date}nd`;
-      case 3: formattedDate = `${date}rd`;
-      default: formattedDate = `${date}th`;
+      case 1:
+        formattedDate = `${date}st`;
+        break;
+      case 2:
+        formattedDate = `${date}nd`;
+        break;
+      case 3:
+        formattedDate = `${date}rd`;
+        break;
+      default:
+        formattedDate = `${date}th`;
     }
 
     if (hour >= 12) {
