@@ -13,7 +13,7 @@ class BookStore {
     this.liList = document.getElementById('li-list');
     this.liAdd = document.getElementById('li-add');
     this.liContact = document.getElementById('li-contact');
-    this.today = new Date();
+    this.today = luxon.DateTime.local();
   }
 
   isFormSubmit = () => {
@@ -65,13 +65,13 @@ class BookStore {
     this.bookContentContainer.innerHTML = this.newBookDiv;
   }
 
-  getCurrentDateTime = () => {
-    const month = this.today.toLocaleString('en-us', { month: 'long' });
-    const date = this.today.getDate();
-    const year = this.today.getFullYear();
-    const hour = this.today.getHours();
-    const minutes = this.today.getMinutes();
-    const seconds = this.today.getSeconds();
+  sendCurrentDateTime = () => {
+    const month = this.today.monthLong;
+    const date = this.today.day;
+    const year = this.today.year;
+    const hour = this.today.hour;
+    const minutes = this.today.minute;
+    const seconds = this.today.second;
     let timePrefix;
     let formattedDate;
 
@@ -150,5 +150,5 @@ const bookStore = new BookStore();
 bookStore.isFormSubmit();
 bookStore.showAllBooks();
 bookStore.removeBookFromList();
-bookStore.getCurrentDateTime();
+bookStore.sendCurrentDateTime();
 bookStore.handleContentChange();
