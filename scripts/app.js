@@ -33,7 +33,7 @@ class BookStore {
       <button class='remove-book bg-blue-500 text-white p-1 md:text-lg md:w-24 rounded shadow-lg border hover:shadow-none hover:bg-transparent hover:border-blue-500 hover:text-gray-700'>Remove</button>
       </td>
       </tr>`;
-  } 
+  }
 
   addBookToList = (newBook) => {
     // append the new book
