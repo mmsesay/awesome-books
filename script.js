@@ -83,20 +83,38 @@ class BookStore {
     });
   }
 
+  addActiveClass = (args) => {
+    args.forEach((element) => {
+      element.classList.add('active');
+    });
+  }
+
+  removeActiveClass = (args) => {
+    args.forEach((element) => {
+      element.classList.remove('active');
+    });
+  }
+
   handleContentChange = () => {
     this.liList.addEventListener('click', () => {
       this.showElements([this.bookContainer]);
-      this.hideElements([ this.formContainer, this.contactContainer]);
+      this.hideElements([this.formContainer, this.contactContainer]);
+      this.addActiveClass([this.liList]);
+      this.removeActiveClass([this.liAdd, this.liContact]);
     });
 
     this.liAdd.addEventListener('click', () => {
       this.showElements([this.formContainer]);
       this.hideElements([this.bookContainer, this.contactContainer]);
+      this.addActiveClass([this.liAdd]);
+      this.removeActiveClass([this.liList, this.liContact]);
     });
 
     this.liContact.addEventListener('click', () => {
       this.showElements([this.contactContainer]);
       this.hideElements([this.formContainer, this.bookContainer]);
+      this.addActiveClass([this.liContact]);
+      this.removeActiveClass([this.liList, this.liAdd]);
     });
   }
 }
