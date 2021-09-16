@@ -13,6 +13,17 @@
 </head>
 <body>
   <main class="flex flex-col space-between">
+    <header class="bg-white flex md:h-20 items-center justify-between px-3 py-3 md:px-20 m-3 border-2 border-gray-600">
+      <a href="index.html" class="font-crete md:text-2xl hover:text-blue-500">Awesome Books</a>
+      <ul class="flex md:text-xl font-roboto font-bold">
+        <li class="px-3 md:px-10 border-r border-gray-600 cursor-pointer hover:text-blue-500">List</li>
+        <li class="px-3 md:px-10 border-r border-gray-600 cursor-pointer hover:text-blue-500">Add new</li>
+        <li class="px-3 md:px-10 cursor-pointer hover:text-blue-500">Contact</li>
+      </ul>
+    </header>
+    <div class="flex justify-end px-4 md:px-20 font-bold text-md text-white">
+      <span id="date-time-span">DATE</span>
+    </div>
     <div id="books-container" class="px-3 py-10 h-auto">
       <h1 class="text-center font-bold text-white text-lg font-crete">All awesome books</h1>
       <table id="book-content-container" class="mt-5 border-2 border-gray-300 border-black flex flex-col bg-white">
@@ -27,7 +38,7 @@
         <input id="title" type="text" name="title" placeholder="Title" class="my-2 p-2 border border-gray-400 text-gray-500 font-roboto">
         <input id="description" type="text" name="description" placeholder="Author" class="my-2 p-2 border border-gray-400 text-gray-500 font-roboto">
         <div class="flex justify-end w-full my-2">
-          <button type="submit" class="bg-blue-500 text-white p-1 rounded shadow-md hover:shadow-none hover:bg-transparent hover:border-blue-500 w-14 font-glory">Add</button>
+          <button type="submit" class="bg-blue-500 text-white p-1 rounded shadow-xl border hover:shadow-none hover:bg-transparent hover:border-blue-500 w-14 font-glory hover:text-white">Add</button>
         </div>
       </form>
     </div>
@@ -35,6 +46,7 @@
       <img id="book-illustration" src="./images/book-design.svg" alt="book illustration">
     </div>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
   <script src="./script.js"></script>
 </body>
 </html>

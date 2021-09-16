@@ -6,6 +6,8 @@ class BookStore {
     this.bookContentContainer = document.getElementById('book-content-container');
     this.bookTitle = document.getElementById('title');
     this.bookDescription = document.getElementById('description');
+    this.dateTimeSpan = document.getElementById('date-time-span');
+    this.dateTime = luxon.DateTime;
   }
 
   isFormSubmit = () => {
@@ -23,7 +25,9 @@ class BookStore {
   bookDetails = (book) => {
     this.newBookDiv += `<tr class='flex items-center justify-between h-10 px-2 my-3 font-glory'>
       <td class='text-gray-600 font-bold font-roboto'>'${book.title}' by ${book.description}</td>
-      <td class='text-gray-600 font-bold'><button class='remove-book bg-blue-500 text-white p-1 rounded shadow-md hover:shadow-none hover:bg-transparent hover:border-blue-500'>Remove</button></td>
+      <td class='text-gray-600 font-bold'>
+      <button class='remove-book bg-blue-500 text-white p-1 rounded shadow-lg border hover:shadow-none hover:bg-transparent hover:border-blue-500 hover:text-gray-700'>Remove</button>
+      </td>
       </tr>`;
   }
 
@@ -54,9 +58,16 @@ class BookStore {
 
     this.bookContentContainer.innerHTML = this.newBookDiv;
   }
+
+  getCurrentDateTime = () => {
+    const today = this.dateTime.now();
+    const formatted = {month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'};
+    this.dateTimeSpan.innerHTML = today.toLocaleString(formatted);
+  }
 }
 
 const bookStore = new BookStore();
 bookStore.isFormSubmit();
 bookStore.showAllBooks();
 bookStore.removeBookFromList();
+bookStore.getCurrentDateTime();
