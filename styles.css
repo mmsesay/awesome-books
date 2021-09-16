@@ -31,9 +31,14 @@ main {
   width: 100%;
 }
 
+#books-container {
+  display: block;
+}
+
 .form-container {
   position: relative;
   z-index: 2;
+  display: none;
 }
 
 .book-design-container {
@@ -47,4 +52,12 @@ main {
 #book-illustration {
   width: 100vw;
   height: 100%;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.contact {
+  display: none;
 }

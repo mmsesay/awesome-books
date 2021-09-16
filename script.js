@@ -7,6 +7,12 @@ class BookStore {
     this.bookTitle = document.getElementById('title');
     this.bookDescription = document.getElementById('description');
     this.dateTimeSpan = document.getElementById('date-time-span');
+    this.bookContainer = document.getElementById('books-container');
+    this.formContainer = document.querySelector('.form-container');
+    this.contactContainer = document.querySelector('.contact');
+    this.liList = document.getElementById('li-list');
+    this.liAdd = document.getElementById('li-add');
+    this.liContact = document.getElementById('li-contact');
     this.dateTime = luxon.DateTime;
   }
 
@@ -64,6 +70,35 @@ class BookStore {
     const formatted = {month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'};
     this.dateTimeSpan.innerHTML = today.toLocaleString(formatted);
   }
+
+  hideElements = (args) => {
+    args.forEach((element) => {
+      element.style.display = 'none';
+    });
+  }
+
+  showElements = (args) => {
+    args.forEach((element) => {
+      element.style.display = 'block';
+    });
+  }
+
+  handleContentChange = () => {
+    this.liList.addEventListener('click', () => {
+      this.showElements([this.bookContainer]);
+      this.hideElements([ this.formContainer, this.contactContainer]);
+    });
+
+    this.liAdd.addEventListener('click', () => {
+      this.showElements([this.formContainer]);
+      this.hideElements([this.bookContainer, this.contactContainer]);
+    });
+
+    this.liContact.addEventListener('click', () => {
+      this.showElements([this.contactContainer]);
+      this.hideElements([this.formContainer, this.bookContainer]);
+    });
+  }
 }
 
 const bookStore = new BookStore();
@@ -71,3 +106,4 @@ bookStore.isFormSubmit();
 bookStore.showAllBooks();
 bookStore.removeBookFromList();
 bookStore.getCurrentDateTime();
+bookStore.handleContentChange();
