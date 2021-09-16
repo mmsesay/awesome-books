@@ -61,3 +61,25 @@ tr:nth-child(even) {
 .contact {
   display: none;
 }
+
+@media (min-width: 768px) {
+  .form-container {
+    padding: 0 30%;
+  }
+
+  .text-lg {
+    font-size: 35px;
+  }
+
+  .contact-content > p {
+    margin-top: 20px;
+    line-height: 32px;
+    font-size: 23px;
+  }
+
+  .contact-content > ul > li {
+    margin-top: 20px;
+    line-height: 32px;
+    font-size: 23px;
+  }
+}

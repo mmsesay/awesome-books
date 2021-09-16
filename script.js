@@ -29,10 +29,10 @@ class BookStore {
   }
 
   bookDetails = (book) => {
-    this.newBookDiv += `<tr class='flex items-center justify-between h-10 px-2 my-3 font-glory'>
-      <td class='text-gray-600 font-bold font-roboto'>'${book.title}' by ${book.description}</td>
+    this.newBookDiv += `<tr class='flex items-center justify-between h-10 md:h-14 px-2 my-3 md:my-4 md:px-10 font-glory'>
+      <td class='text-gray-600 font-bold font-roboto md:text-lg'>'${book.title}' by ${book.description}</td>
       <td class='text-gray-600 font-bold'>
-      <button class='remove-book bg-blue-500 text-white p-1 rounded shadow-lg border hover:shadow-none hover:bg-transparent hover:border-blue-500 hover:text-gray-700'>Remove</button>
+      <button class='remove-book bg-blue-500 text-white p-1 md:text-lg md:w-24 rounded shadow-lg border hover:shadow-none hover:bg-transparent hover:border-blue-500 hover:text-gray-700'>Remove</button>
       </td>
       </tr>`;
   }
