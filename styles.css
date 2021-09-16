@@ -26,14 +26,23 @@ body {
   font-size: 25px;
 }
 
+.active {
+  color: #3b82f6;
+}
+
 main {
   height: 100vh;
   width: 100%;
 }
 
+#books-container {
+  display: block;
+}
+
 .form-container {
   position: relative;
   z-index: 2;
+  display: none;
 }
 
 .book-design-container {
@@ -47,4 +56,34 @@ main {
 #book-illustration {
   width: 100vw;
   height: 100%;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.contact {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .form-container {
+    padding: 0 30%;
+  }
+
+  .text-lg {
+    font-size: 35px;
+  }
+
+  .contact-content > p {
+    margin-top: 20px;
+    line-height: 32px;
+    font-size: 23px;
+  }
+
+  .contact-content > ul > li {
+    margin-top: 20px;
+    line-height: 32px;
+    font-size: 23px;
+  }
 }

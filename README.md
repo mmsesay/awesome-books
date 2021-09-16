@@ -6,6 +6,14 @@ Awesome Books version 1                           | Awesome Books version 2     
 :------------------------------------------------:|:------------------------------------------------:|
 ![](./images/awesome-books-v1.png)                |![](./images/awesome-books-v2.png)                |
 
+Awesome Books List View                           | Awesome Books Add View                           |
+:------------------------------------------------:|:------------------------------------------------:|
+![](./images/awesome-books-n1.png)                |![](./images/awesome-books-n2.png)                |
+
+Awesome Books Contact View                        |
+:------------------------------------------------:|
+![](./images/awesome-books-n3.png)                |
+
 ## Built With
 
 - HTML & JAVASCRIPT

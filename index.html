@@ -13,28 +13,59 @@
 </head>
 <body>
   <main class="flex flex-col space-between">
-    <div id="books-container" class="px-3 py-10 h-auto">
+    <header class="bg-white flex md:h-20 items-center justify-between px-3 py-3 md:px-10 mt-3 mx-3 md:mx-20 border-2 border-gray-600">
+      <a href="index.html" class="font-crete text-md md:text-xl hover:text-blue-500">Awesome Books</a>
+      <ul class="flex text-xs md:text-lg font-roboto font-bold">
+        <li id="li-list" class="px-2 md:px-10 border-r border-gray-600 cursor-pointer hover:text-blue-500 active">List</li>
+        <li id="li-add" class="px-2 md:px-10 border-r border-gray-600 cursor-pointer hover:text-blue-500">Add new</li>
+        <li id="li-contact" class="px-2 md:pl-10 cursor-pointer hover:text-blue-500">Contact</li>
+      </ul>
+    </header>
+
+    <div class="flex justify-end px-4 md:px-20 font-bold text-xs md:text-lg text-white">
+      <span id="date-time-span"></span>
+    </div>
+
+    <div id="books-container" class="px-3 py-10 md:mx-20 h-auto mt-20">
       <h1 class="text-center font-bold text-white text-lg font-crete">All awesome books</h1>
       <table id="book-content-container" class="mt-5 border-2 border-gray-300 border-black flex flex-col bg-white">
       </table>
     </div>
-    <div class="form-container">
-      <div class="flex justify-center my-3">
-        <div class="border-2 w-32 rounded border-gray-300"></div>
-      </div>
-      <form id="book-form" class="p-3 flex flex-col h-full px-12 -mt-30">
-        <h2 class="text-center font-bold text-white mb-4 text-lg font-crete">Add a new book</h2>
-        <input id="title" type="text" name="title" placeholder="Title" class="my-2 p-2 border border-gray-400 text-gray-500 font-roboto">
-        <input id="description" type="text" name="description" placeholder="Author" class="my-2 p-2 border border-gray-400 text-gray-500 font-roboto">
+
+    <div class="form-container flex items-center justify-center mt-20 w-full">
+      <form id="book-form" class="p-3 flex flex-col h-full w-full">
+        <h1 class="text-center font-bold text-white mb-10 text-lg font-crete">Add a new book</h1>
+        <input id="title" type="text" name="title" placeholder="Title" class="my-4 p-3 border border-gray-400 text-gray-500 font-roboto">
+        <input id="description" type="text" name="description" placeholder="Author" class="my-4 p-3 border border-gray-400 text-gray-500 font-roboto">
         <div class="flex justify-end w-full my-2">
-          <button type="submit" class="bg-blue-500 text-white p-1 rounded shadow-md hover:shadow-none hover:bg-transparent hover:border-blue-500 w-14 font-glory">Add</button>
+          <button type="submit" class="bg-blue-500 text-white p-3 rounded shadow-xl border hover:shadow-none hover:bg-transparent hover:border-blue-500 w-14 md:w-20 font-glory hover:text-white">Add</button>
         </div>
       </form>
     </div>
+
+    <div class="contact mt-20">
+      <h1 class="text-center font-bold text-white mb-10 text-lg font-crete">
+        Contact Information
+      </h1>
+      <div class="flex flex-col items-center justify-center contact-content">
+        <p class="text-white px-8">
+          Do have any questions or you just want to say "Hello"?
+          <br>
+          You can reach out to us!
+        </p>
+        <ul class="text-white px-8 list-disc mt-5">
+          <li>Our e-mail: mail@mail.com</li>
+          <li>Our phone number: 0043586534422</li>
+          <li>Our address: Streetname 22, 84503 City, Country</li>
+        </ul>
+      </div>
+    </div>
+
     <div class="book-design-container">
       <img id="book-illustration" src="./images/book-design.svg" alt="book illustration">
     </div>
   </main>
-  <script src="./script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
+  <script src="scripts/app.js"></script>
 </body>
 </html>
