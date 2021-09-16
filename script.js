@@ -13,7 +13,7 @@ class BookStore {
     this.liList = document.getElementById('li-list');
     this.liAdd = document.getElementById('li-add');
     this.liContact = document.getElementById('li-contact');
-    this.dateTime = luxon.DateTime;
+    this.today = new Date;
   }
 
   isFormSubmit = () => {
@@ -66,9 +66,29 @@ class BookStore {
   }
 
   getCurrentDateTime = () => {
-    const today = this.dateTime.now();
-    const formatted = {month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'};
-    this.dateTimeSpan.innerHTML = today.toLocaleString(formatted);
+    const month = this.today.toLocaleString('en-us', {month: 'long'});
+    const date = this.today.getDate();
+    const year = this.today.getFullYear();
+    const hour = this.today.getHours();
+    const minutes = this.today.getMinutes();
+    const seconds = this.today.getSeconds();
+    let timePrefix;
+    let formattedDate;
+
+    switch (date) {
+      case 1: formattedDate = `${date}st`;
+      case 2: formattedDate = `${date}nd`;
+      case 3: formattedDate = `${date}rd`;
+      default: formattedDate = `${date}th`;
+    }
+
+    if (hour >= 12) {
+      timePrefix = 'pm';
+    } else {
+      timePrefix = 'am';
+    }
+
+    this.dateTimeSpan.innerHTML = `${month} ${formattedDate} ${year}, ${hour}:${minutes}:${seconds} ${timePrefix}`;
   }
 
   hideElements = (args) => {
