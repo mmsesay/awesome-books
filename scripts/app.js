@@ -6,14 +6,12 @@ class BookStore {
     this.bookContentContainer = document.getElementById('book-content-container');
     this.bookTitle = document.getElementById('title');
     this.bookDescription = document.getElementById('description');
-    this.dateTimeSpan = document.getElementById('date-time-span');
     this.bookContainer = document.getElementById('books-container');
     this.formContainer = document.querySelector('.form-container');
     this.contactContainer = document.querySelector('.contact');
     this.liList = document.getElementById('li-list');
     this.liAdd = document.getElementById('li-add');
     this.liContact = document.getElementById('li-contact');
-    this.today = luxon.DateTime.local();
   }
 
   isFormSubmit = () => {
@@ -35,7 +33,7 @@ class BookStore {
       <button class='remove-book bg-blue-500 text-white p-1 md:text-lg md:w-24 rounded shadow-lg border hover:shadow-none hover:bg-transparent hover:border-blue-500 hover:text-gray-700'>Remove</button>
       </td>
       </tr>`;
-  }
+  } 
 
   addBookToList = (newBook) => {
     // append the new book
@@ -66,36 +64,13 @@ class BookStore {
   }
 
   sendCurrentDateTime = () => {
-    const month = this.today.monthLong;
-    const date = this.today.day;
-    const year = this.today.year;
-    const hour = this.today.hour;
-    const minutes = this.today.minute;
-    const seconds = this.today.second;
-    let timePrefix;
-    let formattedDate;
-
-    switch (date) {
-      case 1:
-        formattedDate = `${date}st`;
-        break;
-      case 2:
-        formattedDate = `${date}nd`;
-        break;
-      case 3:
-        formattedDate = `${date}rd`;
-        break;
-      default:
-        formattedDate = `${date}th`;
-    }
-
-    if (hour >= 12) {
-      timePrefix = 'pm';
-    } else {
-      timePrefix = 'am';
-    }
-
-    this.dateTimeSpan.innerHTML = `${month} ${formattedDate} ${year}, ${hour}:${minutes}:${seconds} ${timePrefix}`;
+    /* eslint-disable */
+    window.addEventListener('load', () => {
+      const { DateTime } = luxon;
+      this.today = DateTime.now();
+      document.getElementById('date-time-span').textContent = this.today.toLocaleString(DateTime.DATETIME_MED);      
+    });
+    /* eslint-enable */
   }
 
   hideElements = (args) => {
