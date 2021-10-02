@@ -26,6 +26,10 @@ body {
   font-size: 25px;
 }
 
+.book-title {
+  font-weight: bolder;
+}
+
 .active {
   color: #3b82f6;
 }
@@ -37,6 +41,11 @@ main {
 
 #books-container {
   display: block;
+}
+
+#book-content-container {
+  max-height: 400px;
+  overflow-y: scroll;
 }
 
 .form-container {
@@ -67,6 +76,15 @@ tr:nth-child(even) {
 }
 
 @media (min-width: 768px) {
+  #books-container {
+    margin: 0 20%;
+    overflow: hidden;
+  }
+
+  #book-content-container {
+    max-height: 400px;
+  }
+
   .form-container {
     padding: 0 30%;
   }

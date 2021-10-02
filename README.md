@@ -2,17 +2,13 @@
 
 > This project is on HTML + JAVASCRIPT. One can create a book, save it to the browsers local storage and can remove a specific book from the array and update the local storage.
 
-Awesome Books version 1                           | Awesome Books version 2                          |
-:------------------------------------------------:|:------------------------------------------------:|
-![](./images/awesome-books-v1.png)                |![](./images/awesome-books-v2.png)                |
+Awesome Books                                                                                                              |
+:-------------------------------------------------------------------------------------------------------------------------:|
+![](./images/awesome-books.gif)                                                                                         |
 
-Awesome Books List View                           | Awesome Books Add View                           |
-:------------------------------------------------:|:------------------------------------------------:|
-![](./images/awesome-books-n1.png)                |![](./images/awesome-books-n2.png)                |
-
-Awesome Books Contact View                        |
-:------------------------------------------------:|
-![](./images/awesome-books-n3.png)                |
+List View (Mobile Version)               | Add View (Mobile Version)              |Contact View (Mobile Version)           |
+:---------------------------------------:|:---------------------------------------:----------------------------------------|
+![](./images/awesome-books-n1.png)       |![](./images/awesome-books-n2.png)      |![](./images/awesome-books-n3.png)      |
 
 ## Built With
 
