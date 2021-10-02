@@ -1,6 +1,6 @@
 # microverse-awesome-books-project-one
 
-> This project is on HTML + JAVASCRIPT. One can create a book, save it to the browser's local storage and can remove a specific book from the array and update the local storage.
+> This awesome books project allow users to create and remove a book. The created book will be saved into the browser's local storage and when the book is removed, the local storage will be updated.
 
 Awesome Books                                                                                                              |
 :-------------------------------------------------------------------------------------------------------------------------:|
